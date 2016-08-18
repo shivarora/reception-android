@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.merlinbusinesssoftware.merlinsignin"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/MyTheme" >
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.DetailsActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.SignIn"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.Terms"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.FaceRecognition"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.CameraActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.SignOut"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.SettingsActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.RefreshData"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.VisitorReport"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.IdleActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.merlinbusinesssoftware.merlinsignin.StaffCameraActivity"
+            android:label="@string/app_name" />
+
+        <receiver android:name="com.merlinbusinesssoftware.merlinsignin.AlarmReceiver" >
+        </receiver>
+
+        <service android:name="com.merlinbusinesssoftware.merlinsignin.BackgroundService" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

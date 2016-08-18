@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
+    android:weightSum="1"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="947dp"
+        android:layout_height="494dp"
+        android:src="@drawable/cromwell_logo"
+        android:layout_weight="0.16"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:text="   Tap Screen to sign in"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.16"
+        android:background="#0c4da2"
+        android:textColor="#fcf8f8"
+        android:textSize="25sp"
+        android:typeface="monospace"
+        android:textAlignment="center"
+        android:inputType="none" />
+</LinearLayout><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/layout/activity_idle.xml -->

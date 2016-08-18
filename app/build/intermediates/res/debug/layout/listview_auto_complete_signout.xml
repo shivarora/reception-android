@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/textViewItem"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:text="Item name here..."
+        android:textSize="15sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="false"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp" />
+
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:id="@+id/visitorImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/layout/listview_auto_complete_signout.xml -->

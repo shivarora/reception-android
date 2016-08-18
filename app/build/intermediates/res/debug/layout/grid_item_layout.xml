@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/grid_item_image"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/grid_item_title"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:maxLines="2"
+        android:ellipsize="marquee"
+        android:textSize="12sp" />
+
+</LinearLayout><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/layout/grid_item_layout.xml -->

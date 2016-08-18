@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8ff"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Back to selection"-->
+                <!--android:id="@+id/button2"-->
+                <!--android:layout_weight="0.06" />-->
+            <ImageView
+                android:id="@+id/back_StaffList"
+                android:layout_width="101dp"
+                android:layout_height="44dp"
+                android:src="@drawable/back"
+                android:contentDescription="100"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.42"
+                android:layout_height="wrap_content"
+                android:text="BRC staff sign in / sign out"
+                android:textSize="30sp"
+                android:layout_marginLeft="-100dp"
+                android:paddingTop="15dp"
+                android:id="@+id/user_selection"
+                android:gravity="center" />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="509dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:weightSum="1"
+            android:foregroundGravity="bottom"
+            android:gravity="center|center_horizontal"
+           >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="478dp"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:foregroundGravity="bottom"
+                android:gravity="center|center_horizontal"
+                android:weightSum="1">
+                <ImageView
+                    android:id="@+id/grid_item_image"
+                    android:layout_width="308dp"
+                    android:layout_height="298dp"
+                    android:src= "@drawable/new_image"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="5dp" />
+
+            <Button
+                android:layout_width="367dp"
+                android:layout_height="102dp"
+                android:text="@string/take_photo"
+                android:drawableLeft="@drawable/camera"
+                android:drawablePadding="32sp"
+                android:gravity="center|left"
+                android:id="@+id/takePicture"
+                android:paddingLeft="20dp"
+                android:background="@drawable/take_photo"
+                android:layout_gravity="center_horizontal|bottom"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"
+                android:textSize="40sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="497dp"
+            android:layout_height="536dp"
+            android:orientation="vertical"
+            android:foregroundGravity="bottom"
+            android:gravity="center|center_vertical"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/signinText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Hello"
+                android:gravity="center|center_vertical"
+                android:textSize="30sp"
+                android:textIsSelectable="true"
+                android:layout_gravity="center_horizontal"
+                android:foregroundGravity="center"
+                android:layout_marginTop="-40dp" />
+
+            <LinearLayout
+                android:layout_width="465dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                android:foregroundGravity="bottom"
+                android:gravity="center|center_horizontal"
+                android:weightSum="1">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Activity:"
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textIsSelectable="true"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp" />
+                <TextView
+                    android:id="@+id/lastSignedVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textIsSelectable="true"
+                     />
+
+                <TextView
+                    android:id="@+id/lastSignedOutVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textIsSelectable="true"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OutSide of building"
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textIsSelectable="true"
+                    android:textColor="#f70606" />
+
+                <Button
+                    android:layout_width="356dp"
+                    android:layout_height="103dp"
+                    android:text="Sign In"
+                    android:background="@drawable/staff_sign_in"
+                    android:onClick="staffSignIn"
+                    android:id="@+id/staffSign"
+                    android:textStyle="bold"
+                    android:layout_gravity="right"
+                    android:foregroundGravity="center|center_vertical"
+                    android:layout_marginBottom="0dp"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/reversetext"
+                    android:layout_width="434dp"
+                    android:layout_height="wrap_content"
+                    android:text="    If you are inside the building please click "
+                    android:foregroundGravity="center_horizontal"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textIsSelectable="true"
+                    android:layout_marginTop="7dp" />
+
+                <Button
+                    android:layout_width="48dp"
+                    android:layout_height="31dp"
+                    android:text="here"
+                    android:background="@drawable/white_back"
+                    android:onClick="staffSignOut"
+                    android:id="@+id/staffSignOut"
+                    android:textStyle="bold"
+                    android:layout_gravity="right"
+                    android:foregroundGravity="center|center_vertical"
+                    android:layout_marginBottom="0dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="#0c4da2" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duncan Bloggs"
+                android:foregroundGravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:textColor="#0c4da2"
+                android:layout_weight="0.24"
+                android:layout_gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

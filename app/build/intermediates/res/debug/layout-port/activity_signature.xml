@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:paddingTop="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical|center" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/textView4"
+            android:gravity="center_vertical|center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="left|center_vertical"
+        >
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/userSignature"
+            android:gravity="center_vertical|center" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="Submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="20dp" />
+</LinearLayout><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/layout-port/activity_signature.xml -->

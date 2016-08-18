@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:drawable="@drawable/success"/>
+</selector><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/drawable/success_toast.xml -->
