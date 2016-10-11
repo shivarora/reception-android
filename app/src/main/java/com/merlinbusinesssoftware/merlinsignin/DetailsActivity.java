@@ -21,7 +21,6 @@ import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
@@ -262,8 +261,9 @@ public class DetailsActivity extends MyBaseActivity implements View.OnClickListe
             try {
 
                 // Create Apache HttpClient
-                HttpClient httpclient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
-                HttpResponse httpResponse = httpclient.execute(new HttpGet(params[0] + staffId ));
+                DefaultHttpClient httpClient = new DefaultHttpClient();
+                //HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
+                HttpResponse httpResponse = httpClient.execute(new HttpGet(params[0] + staffId ));
                 int statusCode = httpResponse.getStatusLine().getStatusCode();
 
                 // 200 represents HTTP OK
@@ -375,8 +375,4 @@ public class DetailsActivity extends MyBaseActivity implements View.OnClickListe
 
     }
 
-    private void Main() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
 }

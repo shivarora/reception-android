@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <gradient android:startColor="#0c4da2"
-        android:endColor="#0c4da2"
-        android:angle="270" />
-    <corners android:radius="3dp" />
-    <stroke android:width="5px" android:color="#0c4da2" />
-</shape><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/drawable/signout_bg.xml -->

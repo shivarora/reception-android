@@ -2,20 +2,9 @@ package com.merlinbusinesssoftware.merlinsignin;
 
 import android.app.Service;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Binder;
-import android.os.IBinder;
 import android.os.Handler;
-import android.preference.PreferenceManager;
-
-import com.merlinbusinesssoftware.merlinsignin.structures.StructLog;
-import com.merlinbusinesssoftware.merlinsignin.structures.StructPending;
-
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import java.util.ArrayList;
+import android.os.IBinder;
 
 /**
  * Created by jamied on 04/09/2015.
@@ -83,7 +72,7 @@ public class BackgroundService extends Service {
             System.out.println("inside Send Data =========================================================");
             processing = true;
 
-            LoadWebServiceSettings();
+            //LoadWebServiceSettings();
             DatabaseHandler db = new DatabaseHandler(getApplicationContext());
             WebService webService = new WebService();
 
@@ -180,11 +169,11 @@ public class BackgroundService extends Service {
         }
     };
 
-    private void LoadWebServiceSettings() {
-        SharedPreferences Prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        mURL = Prefs.getString("url", "");
-        mDSN = Prefs.getString("dsn", "");
-    }
+//    private void LoadWebServiceSettings() {
+//        SharedPreferences Prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        mURL = Prefs.getString("url", "");
+//        mDSN = Prefs.getString("dsn", "");
+//    }
 
     private void updateConnectionUI(boolean connected){
         Intent intent = new Intent(ACTION_UPDATE_CONNECTION);

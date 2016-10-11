@@ -689,9 +689,4 @@ public class StaffCameraActivity extends MyBaseActivity implements SurfaceHolder
         return cameraId;
     }
 
-    private void Main() {
-
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
 }

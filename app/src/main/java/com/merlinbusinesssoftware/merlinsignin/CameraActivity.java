@@ -43,7 +43,6 @@ import com.merlinbusinesssoftware.merlinsignin.structures.StructPending;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -546,9 +545,9 @@ public class CameraActivity extends MyBaseActivity implements SurfaceHolder.Call
 
                 System.out.println("*** doInBackground ** paramAccountName " + paramAccountName + " paramContactName :" + paramContactName);
 
-                // DefaultHttpClient httpClient = new DefaultHttpClient();
+                 DefaultHttpClient httpClient = new DefaultHttpClient();
 
-                HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
+                //HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
 
                 System.out.println(httpClient.getParams().getParameter(ConnRoutePNames.DEFAULT_PROXY));
 
@@ -789,9 +788,5 @@ public class CameraActivity extends MyBaseActivity implements SurfaceHolder.Call
         return cameraId;
     }
 
-    private void Main() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
 
 }

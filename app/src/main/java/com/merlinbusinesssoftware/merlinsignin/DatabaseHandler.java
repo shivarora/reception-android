@@ -22,7 +22,7 @@ import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "merlin.db";
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 27;
     private SQLiteStatement insertStmt;
     private SQLiteDatabase db;
     private Context mContext;
@@ -43,8 +43,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE employee (id INTEGER PRIMARY KEY, employeeid INTEGER NOT NULL UNIQUE," +
                 "name TEXT NOT NULL DEFAULT '');");
         db.execSQL("CREATE TABLE log(id INTEGER PRIMARY KEY AUTOINCREMENT, reception_log_id INTEGER NOT NULL DEFAULT 0, name TEXT NOT NULL DEFAULT '', pending_id INTEGER NOT NULL DEFAULT 0, set_time TEXT NOT NULL DEFAULT '', visitor_id TEXT NOT NULL DEFAULT '', visitor_image_path TEXT NOT NULL DEFAULT '' );");
-        db.execSQL("CREATE TABLE log(id INTEGER PRIMARY KEY AUTOINCREMENT, reception_log_id INTEGER NOT NULL DEFAULT 0, name TEXT NOT NULL DEFAULT '', pending_id INTEGER NOT NULL DEFAULT 0, set_time TEXT NOT NULL DEFAULT '', visitor_id TEXT NOT NULL DEFAULT '', visitor_image_path TEXT NOT NULL DEFAULT '' );");
-        db.execSQL("CREATE UNIQUE INDEX account_idx1 ON account (accountid);");
         db.execSQL("CREATE UNIQUE INDEX contact_idx1 ON contact (accountid);");
         db.execSQL("CREATE UNIQUE INDEX employee_idx1 ON employee (employeeid);");
         db.execSQL("CREATE TABLE pending (id INTEGER PRIMARY KEY, type TEXT NOT NULL DEFAULT '', accountid INTEGER NOT NULL DEFAULT 0," +
@@ -52,12 +50,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 " employeeid INTEGER NOT NULL DEFAULT 0, employee_name TEXT NOT NULL DEFAULT '', vehicle_reg TEXT NOT NULL DEFAULT ''," +
                 " time TEXT NOT NULL DEFAULT '', reception_log_id INTEGER NOT NULL DEFAULT 0, log_id INTEGER NOT NULL DEFAULT 0," +
                 " pending_id INTEGER NOT NULL DEFAULT 0);");
+        db.execSQL("CREATE TABLE settings (id INTEGER PRIMARY KEY, tabletId INTEGER NOT NULL UNIQUE);");
+        db.execSQL("CREATE UNIQUE INDEX settings_idx1 ON settings (tabletId);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-
+        db.execSQL("CREATE TABLE settings (id INTEGER PRIMARY KEY, tabletId INTEGER NOT NULL UNIQUE);");
+        db.execSQL("CREATE UNIQUE INDEX settings_idx1 ON settings (tabletId);");
     }
 
     public void beginTransaction() {
@@ -685,4 +686,58 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         db.close();
     }
+
+    public void insertTabletId(int id) {
+
+        if (!db.isOpen()) {
+            db = this.getReadableDatabase();
+        }
+        ContentValues values = new ContentValues();
+        values.put("tabletId", id);
+        int result = (int) db.insert("settings", null, values);
+        db.close();
+    }
+
+
+    public StructSettings getAllSettings() {
+
+
+        if (!db.isOpen()) {
+            db = this.getReadableDatabase();
+        }
+
+        StructSettings settings = new StructSettings();
+
+        String selectQuery = "SELECT id, tabletId" +
+                " FROM settings ";
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            settings.setId(cursor.getInt(0));
+            settings.setTabletId(cursor.getInt(1));
+            // print the results
+            System.out.println("Log Data======================================");
+            System.out.println(cursor.getInt(0));
+            System.out.println(cursor.getInt(1));
+            System.out.println("Log Data End ======================================");
+            // print the results
+        }
+
+        cursor.close();
+        db.close();
+        return settings;
+    }
+
+    public void updateTabletId(int tabletId) {
+        if (!db.isOpen()) {
+            db = this.getReadableDatabase();
+        }
+
+        ContentValues values = new ContentValues();
+        values.put("tabletId", tabletId);
+        db.update("settings", values, "tabletId=" + tabletId, null);
+        db.close();
+    }
+
 }

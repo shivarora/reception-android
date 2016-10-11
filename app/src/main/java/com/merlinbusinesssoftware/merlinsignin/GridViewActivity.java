@@ -30,8 +30,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
+import com.merlinbusinesssoftware.merlinsignin.structures.StructSettings;
+
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
@@ -57,8 +58,10 @@ public class GridViewActivity extends Fragment  {
     private InputMethodManager      imm;
     private View                    rootView;
     public Integer buttonId         = 0;
+    public DatabaseHandler  db;
+    private Integer tabId;
 
-    private String FEED_URL =  Constants.BACKEND_SERVER_URL_ALL_STAFF;
+    private String FEED_URL = "";
 
     // editText search
     SearchView editsearch;
@@ -152,6 +155,15 @@ public class GridViewActivity extends Fragment  {
             }
         });
 
+        db = new DatabaseHandler(getActivity());
+        StructSettings TabSettings =  db.getAllSettings();
+        tabId = TabSettings.getTabletId();
+
+        System.out.println("This is TAbID " + tabId);
+
+        FEED_URL = Constants.BACKEND_SERVER_URL_ALL_STAFF + "?tabId="+tabId;
+
+        System.out.println("This is feedURL " + FEED_URL);
         //Start download
         new AsyncHttpTask().execute(FEED_URL);
 
@@ -263,14 +275,15 @@ public class GridViewActivity extends Fragment  {
 
         @Override
         protected Integer doInBackground(String... params) {
-            System.out.println("insideasyntask");
+            System.out.println("Calling Api Url " + params[0]);
 
             Integer result = 0;
             try {
 
                 System.out.println("Going to fetch data from backend app");
                 // Create Apache HttpClient
-                HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
+                DefaultHttpClient httpClient = new DefaultHttpClient();
+                //HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
                 HttpResponse httpResponse = httpClient.execute(new HttpGet(params[0]));
                 int statusCode = httpResponse.getStatusLine().getStatusCode();
 

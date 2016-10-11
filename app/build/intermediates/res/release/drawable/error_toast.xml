@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:drawable="@drawable/error"/>
-</selector><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/drawable/error_toast.xml -->

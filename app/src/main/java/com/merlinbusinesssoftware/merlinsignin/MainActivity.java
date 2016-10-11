@@ -17,7 +17,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -41,7 +40,6 @@ import com.merlinbusinesssoftware.merlinsignin.structures.StructContact;
 import com.merlinbusinesssoftware.merlinsignin.structures.StructEmployee;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
@@ -53,7 +51,7 @@ import javax.net.ssl.SSLContext;
 
 
 @SuppressLint("InflateParams")
-public class  MainActivity extends FragmentActivity {
+public class  MainActivity extends MyBaseFragmentAcivity {
 
     private IntentFilter filter       = new IntentFilter(UpdateConnection.ACTION_UPDATE_CONNECTION);
     private UpdateConnection receiver = new UpdateConnection();
@@ -65,6 +63,7 @@ public class  MainActivity extends FragmentActivity {
     private AlarmManager    manager;
     ViewPager               mViewPager;
     private LinearLayout    rootView;
+    private Integer tabId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +74,7 @@ public class  MainActivity extends FragmentActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        tabId = findTabId();
         //sockets
 
         mSocket.on(Socket.EVENT_CONNECT,onConnect);
@@ -86,8 +86,8 @@ public class  MainActivity extends FragmentActivity {
         mSocket.on("brcSuggestionAdd", onNewMessage);
 
         //BRC Suggestion Update
-        mSocket.on("brcSuggestionUpdate", onUpdateMessage);
-
+        //mSocket.on("brcSuggestionUpdate", onUpdateMessage);
+        mSocket.on("SuggestionLocUpdate-"+ String.valueOf(tabId), onUpdateMessage);
         //BRC Suggestion Delete
         mSocket.on("brcSuggestionDelete", onDeleteMessage);
 
@@ -101,8 +101,6 @@ public class  MainActivity extends FragmentActivity {
                 new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
         db = new DatabaseHandler(this);
-
-       // db.deleteAllData();
 
         //sockets finish
 
@@ -334,7 +332,8 @@ public class  MainActivity extends FragmentActivity {
             try {
 
                 // Create Apache HttpClient
-                HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
+                DefaultHttpClient httpClient = new DefaultHttpClient();
+                //HttpClient httpClient = ExSSLSocketFactory.getHttpsClient(new DefaultHttpClient());
                 HttpResponse httpResponse = httpClient.execute(new HttpGet(params[0]));
                 int statusCode = httpResponse.getStatusLine().getStatusCode();
 

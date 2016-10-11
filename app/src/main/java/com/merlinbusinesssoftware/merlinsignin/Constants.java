@@ -6,7 +6,7 @@ package com.merlinbusinesssoftware.merlinsignin;
 
 
 public class Constants {
-    public static final String BACKEND_SERVER_URL = "http://10.100.16.51:7000/";
+    public static final String BACKEND_SERVER_URL = "http://10.100.16.65:7000/";
     public static final String BACKEND_SERVER_URL_VISITORS = BACKEND_SERVER_URL + "visitors/";
     public static final String BACKEND_SERVER_URL_ALL_STAFF = BACKEND_SERVER_URL +"allStaff";
     public static final String BACKEND_SERVER_URL_STAFF_SIGN_IN = BACKEND_SERVER_URL +"staffSignIn/";

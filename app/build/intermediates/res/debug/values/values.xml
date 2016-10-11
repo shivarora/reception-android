@@ -406,7 +406,7 @@
     <eat-comment/>
     <string name="back">Return</string>
     <string name="checking_wifi">
-        Cromwell Reception software unable to use WiFi. Please ring Helpdesk.
+        Cromwell Reception software unable to use WiFi. Please Go to Settings.
     </string>
     <!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values/common_strings.xml -->
     <eat-comment/>
@@ -470,6 +470,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="tab_id">Please enter Provided Tablet Id:</string>
     <string name="take_photo">Take Photo</string>
     <string name="take_picture">Take Picture</string>
     <string name="text_loading">Loading ...</string>

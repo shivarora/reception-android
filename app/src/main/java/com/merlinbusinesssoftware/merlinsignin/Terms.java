@@ -142,10 +142,6 @@ public class Terms extends MyBaseActivity implements ScrollViewListener {
         alertDialog.show();
     }
 
-    private void Main() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
 
     private class WebViewClient extends android.webkit.WebViewClient
     {

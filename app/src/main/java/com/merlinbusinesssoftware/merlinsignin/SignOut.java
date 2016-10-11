@@ -1,6 +1,5 @@
 package com.merlinbusinesssoftware.merlinsignin;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -51,7 +50,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class SignOut extends Activity {
+public class SignOut extends MyBaseActivity {
     public ArrayList<StructLog>   StructLog;
     public DatabaseHandler        db;
     CountDownTimer                inactiveTimer;
@@ -124,13 +123,6 @@ public class SignOut extends Activity {
 
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
-    }
-
-
-
-    private void Main() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
     }
 
     private void setAdapters() {
@@ -321,10 +313,6 @@ public class SignOut extends Activity {
         // finish();
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 
     public void  toast( String message, String set_image){
 

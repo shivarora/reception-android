@@ -397,10 +397,6 @@ public class SignIn extends MyBaseActivity {
         client.disconnect();
     }
 
-    private void Main() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {

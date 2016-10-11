@@ -126,7 +126,8 @@
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:background="@drawable/signout_bg"
-                android:textColor="#FFFCFBFB" />
+                android:textColor="#FFFCFBFB"
+                android:id="@+id/button2" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout><!-- From: file:/Users/aroras/AndroidStudioProjects/MerlinReception/app/src/main/res/layout/fragment_one.xml -->

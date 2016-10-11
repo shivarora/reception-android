@@ -9,9 +9,9 @@
         >
         <EditTextPreference
             android:defaultValue=""
-            android:key="url"
-            android:summary="Web Service URL"
-            android:title="URL" />
+            android:key="tabId"
+            android:summary="Tablet Id"
+            android:title="TabId" />
         <!--<EditTextPreference-->
             <!--android:defaultValue=""-->
             <!--android:key="dsn"-->
