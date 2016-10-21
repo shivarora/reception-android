@@ -75,24 +75,26 @@ public class  MainActivity extends MyBaseFragmentAcivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         tabId = findTabId();
-        //sockets
 
+        //sockets
         mSocket.on(Socket.EVENT_CONNECT,onConnect);
         mSocket.on(Socket.EVENT_DISCONNECT,onDisconnect);
         mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
         mSocket.on(Socket.EVENT_CONNECT_TIMEOUT, onConnectError);
 
-        //BRC Suggestions Add
-        mSocket.on("brcSuggestionAdd", onNewMessage);
+        //Suggestions Add
+        mSocket.on("AddSuggestion-"     + String.valueOf(tabId), onNewMessage);
 
-        //BRC Suggestion Update
-        //mSocket.on("brcSuggestionUpdate", onUpdateMessage);
-        mSocket.on("SuggestionLocUpdate-"+ String.valueOf(tabId), onUpdateMessage);
-        //BRC Suggestion Delete
-        mSocket.on("brcSuggestionDelete", onDeleteMessage);
+        //Suggestion Update
+        mSocket.on("UpdateSuggestion-"  + String.valueOf(tabId), onUpdateMessage);
 
+        //Suggestion Delete
+        mSocket.on("DeleteSuggestion-"  + String.valueOf(tabId), onDeleteMessage);
+
+        //Conenct Message
         mSocket.on("connectMessage", connectMessage);
 
+        //Disconnect Message
         mSocket.on("disconnect", onDisconnect);
 
         mSocket.connect();
@@ -108,24 +110,7 @@ public class  MainActivity extends MyBaseFragmentAcivity {
         /** set the adapter for ViewPager */
         mViewPager.setAdapter(new SamplePagerAdapter(getSupportFragmentManager()));
 
-
-        //Intent alarmIntent = new Intent(this, AlarmReceiver.class);
-        //pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
-
-        //Start Service which will delete all the images after some time
-
     }
-
-
-    public void startAlarm() {
-        manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        int interval = 1000; // 60 seconds
-
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
-
-        System.out.println("inside start alarm");
-    }
-
 
 
     private BroadcastReceiver mConnReceiver = new BroadcastReceiver() {
@@ -276,17 +261,11 @@ public class  MainActivity extends MyBaseFragmentAcivity {
         }
     }
 
-//    private void openIdleActivity() {
-//        Intent i = new Intent(this, IdleActivity.class);
-//        startActivity(i);
-//    }
 
     public void onPrint(final View v) {
 
-
-
         System.out.println("inside print");
-        //moveTaskToBack(true);
+
         LayoutInflater li = LayoutInflater.from(this);
         View dialogView = li.inflate(R.layout.dialog_fire, null);
 

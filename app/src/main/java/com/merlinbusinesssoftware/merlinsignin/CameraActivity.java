@@ -18,14 +18,12 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.OrientationEventListener;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -65,55 +63,34 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * Listing 15-26: Previewing a real-time camera stream
  */
 public class CameraActivity extends MyBaseActivity implements SurfaceHolder.Callback {
     public DatabaseHandler db;
-    CountDownTimer inactiveTimer;
     private static final String TAG = "CameraActivity";
     private Camera camera;
     private int cameraId = 0;
     static Thread t;
-    private String mURL;
 
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
     private static final String IMAGE_DIRECTORY_NAME = "Hello";
     public Uri fileUri; // file url to store image/video
 
-    private int mOrientation;
-    private int mOrientationCompensation;
-    private OrientationEventListener mOrientationEventListener;
 
     // Let's keep track of the display rotation and orientation also:
     private int mDisplayRotation;
     private int mDisplayOrientation;
 
-    // Holds the Face Detection result:
-    private Camera.Face[] mFaces;
-
-    // The surface view for the camera data
-    private SurfaceView mView;
-
     // Draw rectangles and other fancy stuff:
     private FaceOverlayView mFaceView;
-
-    // Log all errors:
-    private final CameraErrorCallback mErrorCallback = new CameraErrorCallback();
 
     public int numberOfTriesLeft = 3;
     public int numberOfTriesForCamera = 99;
     private String userName;
-
     public ProgressDialog progressDialog;
-
-    private static final ScheduledExecutorService worker = Executors.newSingleThreadScheduledExecutor();
     private StructLog StructLog = new StructLog();
-    private StructPending pending = new StructPending();
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -522,8 +499,6 @@ public class CameraActivity extends MyBaseActivity implements SurfaceHolder.Call
 
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
 
-
-            private final ProgressDialog dialog = new ProgressDialog(CameraActivity.this);
             @Override
             protected String doInBackground(String... params) {
 
@@ -554,7 +529,7 @@ public class CameraActivity extends MyBaseActivity implements SurfaceHolder.Call
                 // In a POST request, we don't pass the values in the URL.
                 //Therefore we use only the web page URL as the parameter of the HttpPost argument
 
-                HttpPost httpPost = new HttpPost( Constants.BACKEND_SERVER_URL_VISITORS);
+                HttpPost httpPost = new HttpPost( Constants.BACKEND_SERVER_URL_VISITORS +"?tabId=" + findTabId());
 
 
                 // Because we are not passing values over the URL, we should have a mechanism to pass the values that can be
