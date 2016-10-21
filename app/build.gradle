@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.merlinbusinesssoftware.merlinsignin"
+        minSdkVersion 16
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.nkzawa:socket.io-client:0.3.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile project(':ksoap2-android-assembly-2.4-jar-with-dependencies')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'com.google.code.gson:gson:2.2.4'
+}

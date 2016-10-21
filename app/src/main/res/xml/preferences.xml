@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:key="cat_general"
+        android:title="Settings"
+        android:layout="@layout/settings_header"
+        >
+        <EditTextPreference
+            android:defaultValue=""
+            android:key="tabId"
+            android:summary="Tablet Id"
+            android:title="TabId" />
+        <!--<EditTextPreference-->
+            <!--android:defaultValue=""-->
+            <!--android:key="dsn"-->
+            <!--android:summary="Web Service DSN"-->
+            <!--android:title="DSN" />-->
+
+        <!--<Preference-->
+            <!--android:key="refresh"-->
+            <!--android:summary="Refresh customer, contact and employee information"-->
+            <!--android:title="Refresh Data">-->
+            <!--<intent-->
+                <!--android:action="android.intent.action.VIEW"-->
+                <!--android:targetClass="com.merlinbusinesssoftware.merlinsignin.RefreshData"-->
+                <!--android:targetPackage="com.merlinbusinesssoftware.merlinsignin" />-->
+        <!--</Preference>-->
+        <!--<Preference-->
+            <!--android:key="sign_out_all"-->
+            <!--android:summary="Sign out all visitors"-->
+            <!--android:title="Sign Out All">-->
+        <!--</Preference>-->
+        <!--<Preference-->
+            <!--android:key="report"-->
+            <!--android:summary="See who is currently signed into the building"-->
+            <!--android:title="Visitor Report">-->
+            <!--<intent-->
+                <!--android:action="android.intent.action.VIEW"-->
+                <!--android:targetClass="com.merlinbusinesssoftware.merlinsignin.VisitorReport"-->
+                <!--android:targetPackage="com.merlinbusinesssoftware.merlinsignin" />-->
+        <!--</Preference>-->
+    </PreferenceCategory>
+
+</PreferenceScreen>

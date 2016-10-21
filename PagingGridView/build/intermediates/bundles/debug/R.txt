@@ -1,0 +1,7 @@
+int dimen loading_view_margin_layout 0x7f030000
+int dimen loading_view_margin_right 0x7f030001
+int dimen loading_view_progress_size 0x7f030002
+int id video_item_image 0x7f050000
+int id video_item_label 0x7f050001
+int layout loading_view 0x7f020000
+int string loading 0x7f040000

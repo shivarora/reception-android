@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/CustomerHeader"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.91"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text=""
+            android:textSize="30sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:src="@drawable/cromwell_logo"
+            android:contentDescription="100"
+            android:layout_gravity="top" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:id="@+id/linearLayout2"
+        android:background="#c5c1c1"
+        android:layout_marginTop="80dp">
+
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="387dp"
+            android:layout_height="456dp"
+            android:backgroundTintMode="src_in"
+            android:background="@drawable/new_image"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:foregroundGravity="center|center_vertical"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="100dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:weightSum="1"
+        android:background="#282626"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_toRightOf="@+id/linearLayout2"
+        android:layout_toEndOf="@+id/linearLayout2">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:text="@string/take_picture"
+        android:minHeight="2dp"
+        android:textSize="50sp"
+        android:textStyle="normal"
+        android:padding="5dp"
+        android:elegantTextHeight="false"
+        android:clickable="true"
+        android:paddingLeft="2dp"
+        android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/signout_bg"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
