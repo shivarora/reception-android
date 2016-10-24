@@ -149,4 +149,5 @@
     <color name="CustomerHeader">#dcdcdc</color>
     <color name="Transparent">#fff3f3f3</color>
 	<color name="HoloLightBlue">#33b5e5</color>
+    <color name="appBlue">#0c4da2</color>
 </resources>

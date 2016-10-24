@@ -1,4 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/com.merlinbusinesssoftware.merlinsignin"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,11 +10,77 @@
     >
 
     <android.support.v4.view.ViewPager
-        android:layout_height="match_parent"
+        android:layout_height="660dp"
         android:layout_width="match_parent"
         android:id="@+id/pager"
         tools:context=".MainActivity">
-
     </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight="0.00">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/home_icon"
+                android:id="@+id/imageButtonHome"
+                android:background="@color/appBlue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight="0.00">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/first_aiders_icon"
+                android:id="@+id/imageButtonAid"
+                android:background="@color/appBlue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight="0.00">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/fire_marshals_icon"
+                android:id="@+id/imageButtonFire"
+                android:background="@color/appBlue"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_weight="0.00">
+
+            <ImageButton
+                android:layout_width="320dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/help_icon"
+                android:id="@+id/imageButtonHelp"
+                android:background="@color/appBlue"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

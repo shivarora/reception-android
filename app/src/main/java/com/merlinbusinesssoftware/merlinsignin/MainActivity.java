@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -64,6 +65,7 @@ public class  MainActivity extends MyBaseFragmentAcivity {
     ViewPager               mViewPager;
     private LinearLayout    rootView;
     private Integer tabId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,10 +107,48 @@ public class  MainActivity extends MyBaseFragmentAcivity {
         db = new DatabaseHandler(this);
 
         //sockets finish
+        int position = 0;
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         /** set the adapter for ViewPager */
         mViewPager.setAdapter(new SamplePagerAdapter(getSupportFragmentManager()));
+
+        mViewPager.setCurrentItem(position);
+
+        ImageButton home = (ImageButton) findViewById(R.id.imageButtonHome);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mViewPager.setCurrentItem(1);
+            }
+        });
+
+        ImageButton firstaid = (ImageButton) findViewById(R.id.imageButtonAid);
+        firstaid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mViewPager.setCurrentItem(2);
+            }
+        });
+
+
+        ImageButton fire = (ImageButton) findViewById(R.id.imageButtonFire);
+        fire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mViewPager.setCurrentItem(3);
+            }
+        });
+
+
+        ImageButton help = (ImageButton) findViewById(R.id.imageButtonHelp);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mViewPager.setCurrentItem(4);
+            }
+        });
+
 
     }
 
@@ -146,6 +186,15 @@ public class  MainActivity extends MyBaseFragmentAcivity {
                 return new SampleFragment();
             } else if(position == 1) {
                 return new GridViewActivity();
+            }
+            else if(position == 2) {
+                return new FirstAidActivity();
+            }
+            else if(position == 3) {
+                return new MarshallActivity();
+            }
+            else if(position == 4) {
+                return new HelpActivity();
             }
             else{
                 return new SampleFragment();
