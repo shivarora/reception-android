@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/frag2"
+    android:background="#8ff"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:id="@+id/parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <LinearLayout
+        android:layout_width="1265dp"
+        android:layout_height="53dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:weightSum="1">
+
+        <ImageView
+        android:id="@+id/img_settings"
+        android:layout_width="209dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:contentDescription="@string/action_settings"
+        android:src="@drawable/cromwell_logo"
+        android:layout_marginTop="10dp"
+            android:layout_marginLeft="500dp" />
+
+        <SearchView
+            android:layout_width="415dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchView"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:clickable="false"
+            android:inputType="text"
+            android:focusable="false"
+            android:layout_marginLeft="110dp"
+            android:foregroundGravity="right"
+            android:queryHint="Enter First Name or Last Name or Staff Id"
+            android:paddingLeft="-20dp"
+            android:background="@drawable/staff_selection_view"
+            android:iconifiedByDefault="false"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/first_aider_text"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:text=""
+            android:textSize="30sp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="50dp" />
+
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="285dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:weightSum="1"
+        android:foregroundGravity="bottom"
+        android:background="@drawable/staff_selection_view"
+            >
+        <GridView
+            android:id="@+id/firstaidgridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:columnWidth="125dp"
+            android:drawSelectorOnTop="true"
+            android:gravity="center"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:padding="5dp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

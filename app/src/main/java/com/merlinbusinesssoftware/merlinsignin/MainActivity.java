@@ -115,40 +115,60 @@ public class  MainActivity extends MyBaseFragmentAcivity {
 
         mViewPager.setCurrentItem(position);
 
-        ImageButton home = (ImageButton) findViewById(R.id.imageButtonHome);
+        // Functionality for image Button at bottom
+
+        final ImageButton home = (ImageButton) findViewById(R.id.imageButtonHome);
+        final ImageButton firstaid = (ImageButton) findViewById(R.id.imageButtonAid);
+        final ImageButton fire = (ImageButton) findViewById(R.id.imageButtonFire);
+        final ImageButton help = (ImageButton) findViewById(R.id.imageButtonHelp);
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewPager.setCurrentItem(1);
+                home.setBackgroundResource(R.drawable.home_icon_active);
+                firstaid.setBackgroundResource(R.drawable.first_aiders_icon);
+                fire.setBackgroundResource(R.drawable.fire_list_icon);
+                help.setBackgroundResource(R.drawable.help_icon);
+                mViewPager.setCurrentItem(0);
             }
         });
 
-        ImageButton firstaid = (ImageButton) findViewById(R.id.imageButtonAid);
+
         firstaid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                firstaid.setBackgroundResource(R.drawable.first_aiders_icon_active);
+                home.setBackgroundResource(R.drawable.home_icon_active);
+                fire.setBackgroundResource(R.drawable.fire_list_icon);
+                help.setBackgroundResource(R.drawable.help_icon);
                 mViewPager.setCurrentItem(2);
             }
         });
 
 
-        ImageButton fire = (ImageButton) findViewById(R.id.imageButtonFire);
+
         fire.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fire.setBackgroundResource(R.drawable.fire_list_icon_active);
+                home.setBackgroundResource(R.drawable.home_icon_active);
+                firstaid.setBackgroundResource(R.drawable.first_aiders_icon);
+                help.setBackgroundResource(R.drawable.help_icon);
                 mViewPager.setCurrentItem(3);
             }
         });
 
 
-        ImageButton help = (ImageButton) findViewById(R.id.imageButtonHelp);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                help.setBackgroundResource(R.drawable.help_icon_active);
+                home.setBackgroundResource(R.drawable.home_icon_active);
+                firstaid.setBackgroundResource(R.drawable.first_aiders_icon);
+                fire.setBackgroundResource(R.drawable.fire_list_icon);
                 mViewPager.setCurrentItem(4);
             }
         });
-
 
     }
 
