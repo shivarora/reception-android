@@ -14,7 +14,8 @@
         android:padding="10dp"
         android:id="@+id/parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
     <LinearLayout
         android:layout_width="1265dp"
         android:layout_height="53dp"
@@ -72,13 +73,13 @@
 
         <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="285dp"
+        android:layout_height="500dp"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:weightSum="1"
         android:foregroundGravity="bottom"
         android:background="@drawable/staff_selection_view"
-            >
+            android:layout_weight="9.05">
         <GridView
             android:id="@+id/firstaidgridView"
             android:layout_width="match_parent"

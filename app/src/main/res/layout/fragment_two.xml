@@ -91,7 +91,7 @@
 
         <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="626dp"
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:weightSum="1"
@@ -123,16 +123,5 @@
     </LinearLayout>
 
     </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible"
-        android:id="@+id/touchInterceptor"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-    </FrameLayout>
 
 </RelativeLayout>
